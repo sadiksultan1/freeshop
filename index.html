@@ -30,6 +30,16 @@
 </main>
 
 
+
+<form id="productForm">
+      <input type="text" id="name" placeholder="Product Name" required>
+      <input type="number" id="price" placeholder="Price" required>
+      <textarea id="description" placeholder="Description" required></textarea>
+      <button type="submit">Add Product</button>
+    </form>
+
+
+
 <section id="contact" style="margin-top:2rem;background:#111;padding:2rem;border-radius:12px;">
   <h2>Contact Info</h2>
   <ul style="list-style:none;padding:0;">
@@ -48,6 +58,8 @@
 <footer>
   © FreeShop Example
 </footer>
+
+<script type="module" src="js/main.js"></script>
 
 <script type="module">
 import { signupUser, loginUser } from './js/auth.js';
