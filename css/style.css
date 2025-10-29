@@ -1,0 +1,62 @@
+/* css/style.css */
+body, html {
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+    background:#111;
+    color:#fff;
+}
+
+.header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 2rem;
+    background:rgba(0,0,0,0.7);
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:10;
+}
+
+.header .logo {
+    font-size:1.8rem;
+    font-weight:bold;
+}
+
+.nav a {
+    color:#fff;
+    margin-left:1rem;
+    text-decoration:none;
+}
+
+.container {
+    padding:8rem 2rem 2rem 2rem;
+    max-width:600px;
+    margin:auto;
+}
+
+input, button {
+    width:100%;
+    padding:.6rem;
+    margin:.4rem 0;
+    border-radius:8px;
+    border:none;
+}
+
+button {
+    background:#f00;
+    color:#fff;
+    cursor:pointer;
+}
+
+button:disabled {
+    background:#555;
+}
+
+footer {
+    background:#222;
+    text-align:center;
+    padding:2rem 1rem;
+    margin-top:3rem;
+}
