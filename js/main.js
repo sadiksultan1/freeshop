@@ -1,15 +1,16 @@
 import { db } from "./firebase-config.js";
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
-const form = document.getElementById("productForm");
-const status = document.getElementById("status");
+const productForm = document.getElementById("productForm");
+const status = document.createElement("p");
+productForm.appendChild(status);
 
-form.addEventListener("submit", async (e) => {
+productForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const name = document.getElementById("name").value;
+  const name = document.getElementById("name").value.trim();
   const price = parseFloat(document.getElementById("price").value);
-  const description = document.getElementById("description").value;
+  const description = document.getElementById("description").value.trim();
 
   try {
     const docRef = await addDoc(collection(db, "products"), {
@@ -18,8 +19,10 @@ form.addEventListener("submit", async (e) => {
       description
     });
     status.textContent = `Product added! ID: ${docRef.id}`;
-    form.reset();
+    status.style.color = "green";
+    productForm.reset();
   } catch (error) {
     status.textContent = `Error: ${error.message}`;
+    status.style.color = "red";
   }
 });
